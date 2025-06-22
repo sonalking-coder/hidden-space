@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Test Ask Button</title>
+  <title>Ask a Nurse</title>
 </head>
 <body>
-  <textarea id="userQuestion" placeholder="Ask here"></textarea>
+
+  <h1>Ask a Nurse 👩‍⚕️</h1>
+
+  <textarea id="userQuestion" placeholder="Type your question here..." rows="5" cols="40"></textarea><br><br>
+
   <button id="askBtn">Ask Now</button>
-  <div id="response" style="display:none;"></div>
+
+  <div id="nurseResponse" style="margin-top:20px; display:none; color: green; font-weight: bold;"></div>
 
   <script>
-    document.getElementById('askBtn').addEventListener('click', () => {
+    document.getElementById('askBtn').onclick = function() {
       const question = document.getElementById('userQuestion').value.trim();
-      const response = document.getElementById('response');
+      const response = document.getElementById('nurseResponse');
       if (!question) {
         alert('Please enter a question.');
         return;
       }
       response.style.display = 'block';
-      response.textContent = "Wrong question, the real question is: Are you sick?";
-    });
+      response.textContent = "Wrong question, the real question is: Are you Retarded?";
+    }
   </script>
+
 </body>
 </html>
