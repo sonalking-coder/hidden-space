@@ -14,15 +14,26 @@
   <div id="nurseResponse" style="margin-top:20px; display:none; color: green; font-weight: bold;"></div>
 
   <script>
+    let questionCount = 0;
+
     document.getElementById('askBtn').onclick = function() {
       const question = document.getElementById('userQuestion').value.trim();
       const response = document.getElementById('nurseResponse');
+
       if (!question) {
         alert('Please enter a question.');
         return;
       }
+
+      questionCount++;
+
       response.style.display = 'block';
-      response.textContent = "Wrong question, the real question is: Are you Retarded?";
+
+      if (questionCount === 1) {
+        response.textContent = "Wrong question, the real question is: Are you sick?";
+      } else {
+        response.textContent = "So you are sick.";
+      }
     }
   </script>
 
